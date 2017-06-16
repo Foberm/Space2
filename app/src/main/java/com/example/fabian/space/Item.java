@@ -1,0 +1,73 @@
+package com.example.fabian.space;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+
+import java.util.Random;
+
+/**
+ * Created by Fabian on 07.06.2017.
+ */
+
+public class Item {
+    Bitmap item;
+    GamePanel gp;
+    Paint paint1 = new Paint();
+    Rect bounding = new Rect(0, 250, 50, 300);
+    int r;
+    Item(GamePanel gp){
+        this.gp = gp;
+        bounding.offset(new Random().nextInt(875)+50, 0);
+        r = new Random().nextInt(6);
+        switch(r){
+            case 0:
+                item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.heart_small);
+                break;
+            case 1:
+                item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.speed_small);
+                break;
+            case 2:
+                item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.schrot_small);
+                break;
+            default:
+                item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.gold);
+        }
+    }
+
+    Item(GamePanel gp, int x){
+        this.gp = gp;
+        item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.goldsack_small);
+        r=-1;
+        bounding.offset(x, 0);
+    }
+
+    void onCollect(){
+        switch(r){
+            case -1:
+                gp.gold+=10;
+                break;
+            case 0:
+                gp.lives++;
+                break;
+            case 1:
+                gp.machine_gun_frames = 150;
+                break;
+            case 2:
+                gp.shotgun_shots_left = 25;
+                break;
+            default:
+                gp.gold++;
+                break;
+        }
+    }
+
+    void draw(Canvas canvas){
+        canvas.drawBitmap(item, null, bounding, null);
+        //canvas.drawRect(bounding, paint1);
+    }
+}

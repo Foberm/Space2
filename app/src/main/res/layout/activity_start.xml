@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.fabian.space.StartActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg">
+
+        <Button
+            android:id="@+id/btn_shop"
+            android:text="Shop"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:layout_gravity="bottom|end"
+            android:drawableRight="@android:drawable/btn_star"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/button3"
+            android:text="Settings"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:drawableRight="@android:drawable/btn_star"
+            android:layout_marginTop="28dp"
+            android:layout_below="@+id/btn_shop"
+            android:layout_alignStart="@+id/btn_shop" />
+
+        <Button
+            android:id="@+id/btn_start"
+            android:text="Start"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:drawableRight="@android:drawable/btn_star"
+            android:layout_marginBottom="28dp"
+            android:layout_above="@+id/btn_shop"
+            android:layout_alignStart="@+id/btn_shop" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
