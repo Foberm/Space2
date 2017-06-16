@@ -41,7 +41,7 @@ public class Enemy {
 
         moveTo = getRandom()%2 == 0?80:1000;
     }
-//git?
+
     private boolean intersect(List<Enemy> enemies){
         for(Enemy e : enemies){
             if(bounding.intersect(e.bounding)){

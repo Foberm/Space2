@@ -143,7 +143,7 @@ import java.util.Random;
             }
         }
     }
-    //git?
+
     void endLaser(){
         frames_until_special = frames_special;
         laserr = null;
