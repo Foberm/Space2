@@ -11,7 +11,7 @@ public class Shot {
     int alpha = 0;
     public Rect bounding;
     Shot(MediaPlayer mp){
-        mp.start();
+      //  mp.start();
         bounding = new Rect(Player.bounding.centerX()-15, Player.bounding.top-60, Player.bounding.centerX()+15, Player.bounding.top-10);
 
     }

@@ -125,7 +125,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         enemy = BitmapFactory.decodeResource(ct.getResources(), R.drawable.enemy);
         shot = BitmapFactory.decodeResource(ct.getResources(), R.drawable.lvl1);
         shote = BitmapFactory.decodeResource(ct.getResources(), R.drawable.enemyshot);
-        blood = BitmapFactory.decodeResource(ct.getResources(), R.drawable.bloodflash2);
+        blood = BitmapFactory.decodeResource(ct.getResources(), R.drawable.damaged2);
         shotSound  = MediaPlayer.create(context, R.raw.laser2);
 
         InputStream is = getResources().openRawResource(+ R.drawable.met1);
@@ -494,6 +494,10 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     public void draw(Canvas canvas) {
         super.draw(canvas);
             canvas.drawBitmap(back, null, mMeasuredRect, null);
+        if(frames_bloodflash_left>0){
+            frames_bloodflash_left--;
+            canvas.drawBitmap(blood, null, mMeasuredRect, null);
+        }
             canvas.drawBitmap(dino, null, new Rect(player.bounding2.left, player.bounding.top, player.bounding2.right, player.bounding2.bottom), null);
 
             if (start) {
@@ -521,10 +525,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
 
 
 
-            if(frames_bloodflash_left>0){
-                frames_bloodflash_left--;
-           //     canvas.drawBitmap(blood, null, mMeasuredRect, null);
-            }
+
             if (score < highscore)
                 canvas.drawText("Highscore: " + highscore + ", Score: " + score + ", Lives: " + lives + ", Gold: " + gold, 20, 20, paint3);
             else
