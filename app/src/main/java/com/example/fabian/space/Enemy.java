@@ -12,7 +12,7 @@ import java.util.Random;
  */
 
 public class Enemy {
-    Rect bounding = new Rect(0, 50, 150, 125);
+    Rect bounding = new Rect(0, 20, 150, 160);
     int moveTo, live =  3;
 
     Enemy(List<Enemy> enemies){

@@ -38,6 +38,7 @@ public class Obstacle {
         return r.nextInt(900)+50;
     }
 
+int start = 0;
     void move(int offset){
         if(alpha !=0){
             bounding.offset(-(int)(offset*Math.sin(alpha)), (int)(-offset*Math.cos(alpha)));
@@ -48,8 +49,10 @@ public class Obstacle {
         }
         if (null != m) {
 
-            final int _relatif_time = (int) ((_current_time - _start_time) % m.duration());
-            m.setTime(_relatif_time);
+            //final int _relatif_time = (int) ((_current_time - _start_time) % m.duration());
+            //m.setTime(_relatif_time);
+            m.setTime(start%m.duration());
+            start+=80;
         }
     }
 

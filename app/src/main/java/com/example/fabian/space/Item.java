@@ -17,7 +17,6 @@ import java.util.Random;
 public class Item {
     Bitmap item;
     GamePanel gp;
-    Paint paint1 = new Paint();
     Rect bounding = new Rect(0, 250, 50, 300);
     int r;
     Item(GamePanel gp){
@@ -35,13 +34,13 @@ public class Item {
                 item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.schrot_small);
                 break;
             default:
-                item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.gold);
+                item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.c_coin);
         }
     }
 
     Item(GamePanel gp, int x){
         this.gp = gp;
-        item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.goldsack_small);
+        item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.morecoins2);
         r=-1;
         bounding.offset(x, 0);
     }
@@ -68,6 +67,5 @@ public class Item {
 
     void draw(Canvas canvas){
         canvas.drawBitmap(item, null, bounding, null);
-        //canvas.drawRect(bounding, paint1);
     }
 }

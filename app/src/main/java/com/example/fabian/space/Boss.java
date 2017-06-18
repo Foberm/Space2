@@ -6,10 +6,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.RectF;
 import android.util.Log;
 
-import java.util.List;
 import java.util.Random;
 
 
@@ -36,18 +34,15 @@ import java.util.Random;
     int frames_until_meteor = 9;
     final int frames_shot =  85;
     int frames_until_shot = frames_shot;
-    int frames_in_laser = 0;
-    final int frames_in_laser_until_livelost=15;
     final int frames_special = 350;//450
     int frames_until_special = frames_special;
-    int lives = 15;
+    int lives = 150;
     void update() {
-        if(laserr==null)if(bounding.centerX()<moveTo)bounding.offset((int)(5), 0);
+        if(laser==null)if(bounding.centerX()<moveTo)bounding.offset((int)(5), 0);
         else bounding.offset(-(int)(5), 0);
 
         if(new Rect(moveTo, 100, moveTo+1, 101).intersect(new Rect(bounding.centerX(), 100, bounding.centerX()+10, 101
         ))){
-
             moveTo = new Random().nextInt(550)+250;
         }
 
@@ -62,8 +57,8 @@ import java.util.Random;
         }
 
         frames_until_special-=gp.frameTime;
-        if(frames_until_special <= 0 && laserr==null){
-            int r = new Random().nextInt(3);
+        if(frames_until_special <= 0 && frames_until_special >-10 && laser==null){
+            int r = new Random().nextInt(4);
             switch (r){
                 case 0:
                     numberOfMeteors = 15;
@@ -85,24 +80,14 @@ import java.util.Random;
                     frames_until_special = frames_special;
                     break;
                 case 3:
-                    if(laserr==null)laserr= new Laser(bounding.centerX(), this);
-                    laser = true;
-                    frames_until_special--;
+                    laser = new Laser(this);
+                    frames_until_special-=10;
                     break;
             }
         }
 
-        if(laserr!=null){
-            if(gp.player.intersects(new Rect((int)laserr.bounding.left, (int)laserr.bounding.top,(int)laserr.bounding.right,(int)laserr.bounding.bottom))){
-                frames_in_laser+=gp.frameTime;
-                if(frames_in_laser >= frames_in_laser_until_livelost){
-                    frames_in_laser = 0;
-                    gp.minusLive();
+        if(laser!=null) laser.update();
 
-                }
-            }
-            laserr.update();
-        }
         if(numberOfMeteors > 0){
             frames_until_meteor-=gp.frameTime;
             if(frames_until_meteor<=0){
@@ -115,20 +100,14 @@ import java.util.Random;
     }
 
 
-    boolean laser = false;
-    Laser laserr;
+    Laser laser;
     long _start_time=0;
     void draw(Canvas canvas){
         if(lives >0) {
             canvas.drawRect(new Rect(200, 10, 350, 40), paint4);
             canvas.drawRect(new Rect(200, 10, 200 + lives, 40), paint3);
             canvas.drawBitmap(boss, null, bounding, null);
-            if (laser) {
-                canvas.save();
-                canvas.rotate((float) laserr.alpha, laserr.x, laserr.y);
-                canvas.drawOval(laserr.bounding, paint2);
-                canvas.restore();
-            }
+            if (laser != null) laser.draw(canvas);
         }else{
             long _current_time = android.os.SystemClock.uptimeMillis();
             if (0 == _start_time) {
@@ -146,8 +125,7 @@ import java.util.Random;
 
     void endLaser(){
         frames_until_special = frames_special;
-        laserr = null;
-        laser = false;
+        laser = null;
     }
 
 }

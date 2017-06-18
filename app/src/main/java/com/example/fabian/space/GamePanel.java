@@ -84,7 +84,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     float frameTime = 1;
 
     int speed = 20 ,score = 0, lives = 5, numberOfEnemies = 2, splitChance = 10;
-    int scoreForBoss = 150;
+    int scoreForBoss = 200;
 
     final int frames_shot = 10;
     float frames_until_shot = frames_shot;
@@ -122,7 +122,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         top = BitmapFactory.decodeResource(ct.getResources(), R.drawable.rocket);
         l = BitmapFactory.decodeResource(ct.getResources(), R.drawable.left);
         r = BitmapFactory.decodeResource(ct.getResources(), R.drawable.right);
-        enemy = BitmapFactory.decodeResource(ct.getResources(), R.drawable.enemy);
+        enemy = BitmapFactory.decodeResource(ct.getResources(), R.drawable.ufo);
         shot = BitmapFactory.decodeResource(ct.getResources(), R.drawable.lvl1);
         shote = BitmapFactory.decodeResource(ct.getResources(), R.drawable.enemyshot);
         blood = BitmapFactory.decodeResource(ct.getResources(), R.drawable.damaged2);
