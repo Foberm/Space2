@@ -93,8 +93,8 @@ import java.util.Random;
             if(frames_until_meteor<=0){
                 numberOfMeteors--;
                 frames_until_meteor = 10;
-                if(new Random().nextBoolean())gp.obstacles.add(new Obstacle(gp.obstacles, gp.m1));
-                else gp.obstacles.add(new Obstacle(gp.obstacles, gp.m2));
+                if(new Random().nextBoolean())gp.obstacles.add(new Obstacle(gp.obstacles, true));
+                else gp.obstacles.add(new Obstacle(gp.obstacles, false));
             }
         }
     }
@@ -116,7 +116,7 @@ import java.util.Random;
             if (null != gp.sb) {
                 Log.d("a", "da");
                 final int _relatif_time = (int) ((_current_time - _start_time));
-                if(_relatif_time > gp.sb.duration())lives=-100;
+                if(_relatif_time > gp.sb.duration())gp.endBoss();
                 else gp.sb.setTime(_relatif_time);
                 gp.sb.draw(canvas, bounding.left, bounding.top );
             }

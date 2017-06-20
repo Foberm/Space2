@@ -22,7 +22,8 @@ public class Item {
     Item(GamePanel gp){
         this.gp = gp;
         bounding.offset(new Random().nextInt(875)+50, 0);
-        r = new Random().nextInt(6);
+        r = new Random().nextInt(7);
+
         switch(r){
             case 0:
                 item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.heart_small);
@@ -33,6 +34,8 @@ public class Item {
             case 2:
                 item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.schrot_small);
                 break;
+            case 3:
+                item = BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.gold);
             default:
                 item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.c_coin);
         }
@@ -59,6 +62,8 @@ public class Item {
             case 2:
                 gp.shotgun_shots_left = 25;
                 break;
+            case 3:
+                gp.nuke = true;
             default:
                 gp.gold++;
                 break;

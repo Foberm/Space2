@@ -9,8 +9,8 @@ import android.view.MotionEvent;
 
 public class Player {
 
-    public static Rect bounding = new Rect(475,1500,625,1650);
-    public static Rect bounding2 = new Rect(400,1650,700,1800);
+    public static Rect bounding = new Rect(550,1600,650,1700);
+    public static Rect bounding2 = new Rect(500,1700,700,1800);
 
     int lives = 3;
     int gold = 0;

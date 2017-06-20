@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Movie;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.media.MediaPlayer;
 import android.media.MediaScannerConnection;
@@ -94,6 +95,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     float frames_until_enemy = frames_enemy;
     final int frames_enemy_shot = 90;
 
+    final int frames_dropship = 1800;
+    float frames_until_dropship = frames_dropship;
+
     Map<Enemy, Integer> frames_until_enemy_shot = new ArrayMap<>();
     int gold = 0;
     int machine_gun_frames = 0;
@@ -106,7 +110,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     List<EnemyShot> enemyshot = new ArrayList<>();
     List<Obstacle> obstacles = new ArrayList<>();
     List<Item> items = new ArrayList<>();
-    Movie m1, m2, k1, k2, sb;
+    Movie sb;
     Boss boss;
 
     int shotgun_shots_left = 0;
@@ -114,12 +118,17 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     boolean left, right = false, start = true;
 
     MediaPlayer shotSound;
+    public static Bitmap[] imageSequenz =  new Bitmap[50];
+    public static Bitmap[] imageSequenzKlein =  new Bitmap[50];
+    public static Bitmap[] imageSequenz2 =  new Bitmap[50];
+    public static Bitmap[] imageSequenzKlein2 =  new Bitmap[50];
 
+    Dropship dropship;
     int chanceForItem = 450;
     private void init(final Context ct) {
         back = BitmapFactory.decodeResource(ct.getResources(), R.drawable.back2);
-        dino = BitmapFactory.decodeResource(ct.getResources(), R.drawable.rocket);
-        top = BitmapFactory.decodeResource(ct.getResources(), R.drawable.rocket);
+        dino = BitmapFactory.decodeResource(ct.getResources(), R.drawable.top);
+        top = BitmapFactory.decodeResource(ct.getResources(), R.drawable.top);
         l = BitmapFactory.decodeResource(ct.getResources(), R.drawable.left);
         r = BitmapFactory.decodeResource(ct.getResources(), R.drawable.right);
         enemy = BitmapFactory.decodeResource(ct.getResources(), R.drawable.ufo);
@@ -128,16 +137,26 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         blood = BitmapFactory.decodeResource(ct.getResources(), R.drawable.damaged2);
         shotSound  = MediaPlayer.create(context, R.raw.laser2);
 
-        InputStream is = getResources().openRawResource(+ R.drawable.met1);
-        m1 = Movie.decodeStream(is);
-        is = getResources().openRawResource(+ R.drawable.meteor_cyan);
-        m2 = Movie.decodeStream(is);
-        is = getResources().openRawResource(+ R.drawable.met1klein);
-        k1 = Movie.decodeStream(is);
-        is = getResources().openRawResource(+ R.drawable.meteor_small_cyan);
-        k2 = Movie.decodeStream(is);
-        is = getResources().openRawResource(+ R.drawable.boss_shaking);
-        sb = Movie.decodeStream(is);
+
+        for(int i=1;i<=50;i++){
+            int id=getResources().getIdentifier("blue00"+i, "raw", context.getPackageName());
+            imageSequenz[i-1] = BitmapFactory.decodeResource(ct.getResources(), id);
+        }
+
+        for(int i=0;i<50;i++){
+            imageSequenzKlein[i] =  Bitmap.createScaledBitmap(
+                    imageSequenz[i], 50, 50, false);
+        }
+
+        for(int i=1;i<=50;i++){
+            int id=getResources().getIdentifier("cyan00"+i, "raw", context.getPackageName());
+            imageSequenz2[i-1] = BitmapFactory.decodeResource(ct.getResources(), id);
+        }
+
+        for(int i=0;i<50;i++){
+            imageSequenzKlein2[i] =  Bitmap.createScaledBitmap(
+                    imageSequenz2[i], 50, 50, false);
+        }
 
         paint = new Paint();
         paint.setColor(Color.YELLOW);
@@ -212,8 +231,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
             frames_until_obstacle-=frameTime;
             if (frames_until_obstacle <= 0) {
                 frames_until_obstacle = frames_obstacle;
-                if(new Random().nextBoolean())obstacles.add(new Obstacle(m1));
-                else obstacles.add(new Obstacle(m2));
+                if(new Random().nextBoolean())obstacles.add(new Obstacle(true));
+                else obstacles.add(new Obstacle(false));
             }
 
 
@@ -225,6 +244,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                     frames_until_enemy_shot.put(enemies.get(enemies.size() - 1), frames_enemy_shot);
                 }
             }
+
+            frames_until_dropship-=frameTime;
+            if(frames_until_dropship >=0)dropship = new Dropship(this);
 
         }
 
@@ -239,6 +261,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         if(new Random().nextInt(chanceForItem) == 0){
             items.add(new Item(this));
         }
+
+
     }
 
     void moveStuff(){
@@ -257,6 +281,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         }
         for( Item i : items){
             i.bounding.offset(0, (int)(20*frameTime));
+        }
+
+        if(dropship!=null){
+            dropship.update();
+            if(dropship.bounding.left>=1080)dropship=null;
         }
 
         for(Enemy e : enemies){
@@ -305,10 +334,10 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                     s.bounding.bottom = -20;
                     s.bounding.top = -30;
                     if(new Random().nextInt(splitChance+1) % splitChance == 0 && obstacles.get(j).alpha == 0){
-                        if(new Random().nextBoolean())obstacles.add(new Obstacle(10, o, k1));
-                        else obstacles.add(new Obstacle(10, o, k2));
-                        if(new Random().nextBoolean())obstacles.add(new Obstacle(-10, o, k1));
-                        else obstacles.add(new Obstacle(-10, o, k2));
+                        if(new Random().nextBoolean())obstacles.add(new Obstacle(10, o, false));
+                        else obstacles.add(new Obstacle( 10, o, true));
+                        if(new Random().nextBoolean())obstacles.add(new Obstacle(-10, o, false));
+                        else obstacles.add(new Obstacle(-10, o ,true));
                     }
                     obstacles.get(j).bounding.bottom = 3500;
                     obstacles.get(j).bounding.top = 3400;
@@ -330,7 +359,17 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                     s.bounding.bottom = -20;
                     s.bounding.top = -30;
                     boss.lives--;
-                    if(boss.lives<=-100)endBoss();
+                }
+            }
+            if(dropship!=null){
+                if(shot.intersect(dropship.bounding)){
+                    s.bounding.bottom = -20;
+                    s.bounding.top = -30;
+                    dropship.lives--;
+                    if(dropship.lives<=0){
+                        dropship=null;
+                        addScore(20);
+                    }
                 }
             }
         }
@@ -344,6 +383,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         }
     }
 
+    boolean nuke=false;
 
     void deleteStuff(){
         for(int i = 0; i < shots.size(); i++){
@@ -398,6 +438,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                 i--;
             }
         }
+
     }
 
     public void update(){
@@ -523,6 +564,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
 
             if (boss != null) boss.draw(canvas);
 
+            if(dropship!=null)canvas.drawRect(dropship.bounding, paint2);
+            canvas.drawRect(nuke2, paint);
+            if(nuke)canvas.drawBitmap(top, null, new Rect(900,500,1000,600), null);
 
 
 
@@ -533,7 +577,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
 
     }
 
-
+    Rect nuke2 = new Rect(890,490,1010,610);
     @Override
     public boolean onTouchEvent(final MotionEvent event) {
         if (start) {
@@ -542,22 +586,35 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                 addScore(0);
             }
         } else {
-            if (event.getAction() == android.view.MotionEvent.ACTION_UP && event.getPointerCount() <= 1) {
-                right = left = false;
-                dino = top;
-            }
-            if (event.getAction() == android.view.MotionEvent.ACTION_DOWN) {
-                if (event.getX(event.getPointerCount() - 1) < mMeasuredRect.width() / 2) {
-                    left = true;
-                    right = false;
-                    dino = l;
-                } else {
-                    right = true;
-                    left = false;
-                    dino = r;
-                }
-            }
 
+            if (nuke2.contains((int) event.getX(), (int) event.getY())) {
+
+                if(nuke){
+                    obstacles = new ArrayList<>();
+                    enemies = new ArrayList<>();
+                    enemyshot = new ArrayList<>();
+                    items = new ArrayList<>();
+                    if(boss!=null)boss.lives-=100;
+                    nuke = false;
+                }
+            } else {
+                if (event.getAction() == android.view.MotionEvent.ACTION_UP && event.getPointerCount() <= 1) {
+                    right = left = false;
+                    dino = top;
+                }
+                if (event.getAction() == android.view.MotionEvent.ACTION_DOWN) {
+                    if (event.getX(event.getPointerCount() - 1) < mMeasuredRect.width() / 2) {
+                        left = true;
+                        right = false;
+                        dino = l;
+                    } else {
+                        right = true;
+                        left = false;
+                        dino = r;
+                    }
+                }
+
+            }
         }
         return true;
     }

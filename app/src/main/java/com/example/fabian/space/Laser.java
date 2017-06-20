@@ -3,6 +3,7 @@ package com.example.fabian.space;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Point;
@@ -19,15 +20,15 @@ public class Laser {
     Boss boss;
     Rect bounding;
     Paint line;
-
+    int width = 100;
     Bitmap laser;
-    int frames_until_fire = 15;
+    int frames_until_fire = 23;
     Laser(Boss boss){
-        laser = BitmapFactory.decodeResource(boss.gp.context.getResources(), R.drawable.laser);
+        laser = BitmapFactory.decodeResource(boss.gp.context.getResources(), R.drawable.laser2);
         this.boss = boss;
         bounding = new Rect(boss.bounding.centerX()-5, boss.bounding.bottom, boss.bounding.centerX()+5, boss.bounding.bottom+5);
         line =new Paint();
-        line.setStrokeWidth(20);
+        line.setStrokeWidth(width);
         cur = new Point(bounding.centerX(), bounding.centerY());
     }
 
@@ -40,13 +41,14 @@ int offset = 0;
     void update(){
         frames_until_lock--;
         if(frames_until_lock<=0){
+            line.setColor(Color.RED);
             frames_until_fire--;
             if(frames_until_fire<=0) {
                 frames_until_end--;
                 if (frames_until_end == 0) boss.endLaser();
 
-                if (boss.gp.player.intersects(new Rect(to.x-10, to.y, to.x+10, to.y+1)) && immune <=1) {
-                    boss.gp.minusLive();
+                if (boss.gp.player.intersects(new Rect(to.x-width/2, to.y, to.x+width/2, to.y+1)) && immune <=5) {
+                    if(immune == 5)boss.gp.minusLive();
                     immune++;
                 }
             }
@@ -55,8 +57,8 @@ int offset = 0;
             line.setPathEffect(new DashPathEffect(new float[]{10, 20}, offset));
             to = new Point(Player.bounding.centerX(), Player.bounding.bottom);
             alpha = Math.tan(1.0*(to.x-cur.x)/(to.y-cur.y));
-            right = new Point(bounding.centerX()+10+(int)(250*Math.sin(alpha)), bounding.centerY()+(int)(250*Math.cos(alpha)));
-            left = new Point(bounding.centerX()-10+(int)(250*Math.sin(alpha)), bounding.centerY()+(int)(250*Math.cos(alpha)));
+            right = new Point(bounding.centerX()+width/2+(int)(250*Math.sin(alpha)), bounding.centerY()+(int)(250*Math.cos(alpha)));
+            left = new Point(bounding.centerX()-width/2+(int)(250*Math.sin(alpha)), bounding.centerY()+(int)(250*Math.cos(alpha)));
 
         }
     }
@@ -65,9 +67,8 @@ int offset = 0;
         if(frames_until_fire<=0){
             canvas.save();
             canvas.rotate(-(float)Math.toDegrees(alpha), bounding.centerX(), bounding.centerY());
-            canvas.drawBitmap(laser, null , new Rect(cur.x-10, bounding.top-50, cur.x+10, 2000), null);
+            canvas.drawBitmap(laser, null , new Rect(cur.x-width/2, bounding.top-50, cur.x+width/2, 2000), null);
             canvas.restore();
-            canvas.drawRect(new Rect(to.x-10, to.y, to.x+10, to.y-20), line);
         }else{
             canvas.drawLine(bounding.centerX(), bounding.centerY(), bounding.centerX()+(int)(250*Math.sin(alpha)), bounding.centerY()+(int)(250*Math.cos(alpha)), line);
        }

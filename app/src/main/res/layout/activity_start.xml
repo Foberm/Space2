@@ -14,6 +14,7 @@
 
         <Button
             android:id="@+id/btn_shop"
+            android:background="@drawable/button_fany"
             android:text="Shop"
             android:layout_width="100dp"
             android:layout_height="55dp"
