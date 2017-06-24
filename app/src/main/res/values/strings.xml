@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Space</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="title_activity_shop">ShopActivity</string>
+</resources>
