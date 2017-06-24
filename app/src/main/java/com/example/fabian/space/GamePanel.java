@@ -1,5 +1,6 @@
 package com.example.fabian.space;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,6 +10,7 @@ import android.graphics.Movie;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.media.MediaScannerConnection;
 import android.os.Environment;
@@ -23,11 +25,13 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import static android.content.Context.ACTIVITY_SERVICE;
 
 
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
@@ -119,9 +123,10 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
 
     MediaPlayer shotSound;
     public static Bitmap[] imageSequenz =  new Bitmap[50];
-    public static Bitmap[] imageSequenzKlein =  new Bitmap[50];
     public static Bitmap[] imageSequenz2 =  new Bitmap[50];
-    public static Bitmap[] imageSequenzKlein2 =  new Bitmap[50];
+    Bitmap[] nukeSequenze =  new Bitmap[40
+            ];
+    Bitmap nukeBit, nukeBitBg;
 
     Dropship dropship;
     int chanceForItem = 450;
@@ -135,28 +140,58 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         shot = BitmapFactory.decodeResource(ct.getResources(), R.drawable.lvl1);
         shote = BitmapFactory.decodeResource(ct.getResources(), R.drawable.enemyshot);
         blood = BitmapFactory.decodeResource(ct.getResources(), R.drawable.damaged2);
-        shotSound  = MediaPlayer.create(context, R.raw.laser2);
-
+        nukeBit = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke);
+        nukeBitBg = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke_bg);
 
         for(int i=1;i<=50;i++){
             int id=getResources().getIdentifier("blue00"+i, "raw", context.getPackageName());
             imageSequenz[i-1] = BitmapFactory.decodeResource(ct.getResources(), id);
         }
 
-        for(int i=0;i<50;i++){
-            imageSequenzKlein[i] =  Bitmap.createScaledBitmap(
-                    imageSequenz[i], 50, 50, false);
-        }
-
-        for(int i=1;i<=50;i++){
+       for(int i=1;i<=50;i++){
             int id=getResources().getIdentifier("cyan00"+i, "raw", context.getPackageName());
             imageSequenz2[i-1] = BitmapFactory.decodeResource(ct.getResources(), id);
         }
-
-        for(int i=0;i<50;i++){
-            imageSequenzKlein2[i] =  Bitmap.createScaledBitmap(
-                    imageSequenz2[i], 50, 50, false);
-        }
+        nukeSequenze[0] = null;
+        nukeSequenze[1] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0001);
+        nukeSequenze[2] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0002);
+        nukeSequenze[3] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0003);
+        nukeSequenze[4] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0004);
+        nukeSequenze[5] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0005);
+        nukeSequenze[6] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0006);
+        nukeSequenze[7] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0007);
+        nukeSequenze[8] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0008);
+        nukeSequenze[9] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0009);
+        nukeSequenze[10] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0010);
+        nukeSequenze[11] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0011);
+        nukeSequenze[12] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0012);
+        nukeSequenze[13] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0013);
+        nukeSequenze[14] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0014);
+        nukeSequenze[15] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0015);
+        nukeSequenze[16] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0016);
+        nukeSequenze[17] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0017);
+        nukeSequenze[18] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0018);
+        nukeSequenze[19] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0019);
+        nukeSequenze[20] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0020);
+        nukeSequenze[21] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0021);
+        nukeSequenze[22] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0022);
+        nukeSequenze[23] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0023);
+        nukeSequenze[24] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0024);
+        nukeSequenze[25] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0025);
+        nukeSequenze[26] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0026);
+        nukeSequenze[27] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0027);
+        nukeSequenze[28] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0028);
+        nukeSequenze[29] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0029);
+        nukeSequenze[30] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0030);
+        nukeSequenze[31] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0031);
+        nukeSequenze[32] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0032);
+        nukeSequenze[33] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0033);
+        nukeSequenze[34] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0034);
+        nukeSequenze[35] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0035);
+        nukeSequenze[36] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0036);
+        nukeSequenze[37] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0037);
+        nukeSequenze[38] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0038);
+        nukeSequenze[39] = BitmapFactory.decodeResource(ct.getResources(), R.drawable.nuke0039);
 
         paint = new Paint();
         paint.setColor(Color.YELLOW);
@@ -173,7 +208,15 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
 
         doFileStuff();
     }
-
+    public  int getResId(String pVariableName, String pResourcename, String pPackageName)
+    {
+        try {
+            return getResources().getIdentifier(pVariableName, pResourcename, pPackageName);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
     int highscore =0;
     void doFileStuff(){
         String ret = "";
@@ -565,10 +608,23 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
             if (boss != null) boss.draw(canvas);
 
             if(dropship!=null)canvas.drawRect(dropship.bounding, paint2);
-            canvas.drawRect(nuke2, paint);
-            if(nuke)canvas.drawBitmap(top, null, new Rect(900,500,1000,600), null);
+        canvas.drawBitmap(nukeBitBg, null, nuke2, null);
+            if(nuke){
+                canvas.drawBitmap(nukeBit, null, new Rect(900,500,1000,600), null);
+            }
+        if(nukeFired != -1){
+            canvas.drawBitmap(nukeSequenze[nukeFired], null, mMeasuredRect, null);
+            if(nukeFired==39){
+                obstacles = new ArrayList<>();
+                enemies = new ArrayList<>();
+                enemyshot = new ArrayList<>();
+                items = new ArrayList<>();
+                if(boss!=null)boss.lives-=100;
+                nukeFired=-2;
+            }
+            nukeFired++;
 
-
+        }
 
             if (score < highscore)
                 canvas.drawText("Highscore: " + highscore + ", Score: " + score + ", Lives: " + lives + ", Gold: " + gold, 20, 20, paint3);
@@ -578,6 +634,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     }
 
     Rect nuke2 = new Rect(890,490,1010,610);
+    int nukeFired = -1;
     @Override
     public boolean onTouchEvent(final MotionEvent event) {
         if (start) {
@@ -588,13 +645,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         } else {
 
             if (nuke2.contains((int) event.getX(), (int) event.getY())) {
-
                 if(nuke){
-                    obstacles = new ArrayList<>();
-                    enemies = new ArrayList<>();
-                    enemyshot = new ArrayList<>();
-                    items = new ArrayList<>();
-                    if(boss!=null)boss.lives-=100;
+                    nukeFired = 1;
                     nuke = false;
                 }
             } else {

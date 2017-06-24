@@ -1,6 +1,7 @@
 package com.example.fabian.space;
 
 import android.graphics.Canvas;
+import android.util.Log;
 import android.view.SurfaceHolder;
 
 /**
@@ -44,14 +45,16 @@ public class MainThread extends Thread{
                     this.gamePanel.draw(canvas);
                 }
             } catch (Exception e){
-                e.printStackTrace();
+                e.printStackTrace();                Log.d("a", "here");
+
             }
             finally {
                 if(canvas != null){
                     try{
                         surfaceHolder.unlockCanvasAndPost(canvas);
                     }catch (Exception e){
-                        e.printStackTrace();
+                        e.printStackTrace();                Log.d("a", "here");
+
                     }
                 }
             }
@@ -63,6 +66,7 @@ public class MainThread extends Thread{
                 }
             }catch (Exception e){
                 e.printStackTrace();
+                Log.d("a", "here");
             }
 
             totalTime += System.nanoTime() -startTime;
