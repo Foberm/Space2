@@ -114,21 +114,19 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     List<EnemyShot> enemyshot = new ArrayList<>();
     List<Obstacle> obstacles = new ArrayList<>();
     List<Item> items = new ArrayList<>();
-    Movie sb;
     Boss boss;
 
     int shotgun_shots_left = 0;
     boolean spawn = true;
     boolean left, right = false, start = true;
 
-    MediaPlayer shotSound;
     public static Bitmap[] imageSequenz =  new Bitmap[50];
     public static Bitmap[] imageSequenz2 =  new Bitmap[50];
     Bitmap[] nukeSequenze =  new Bitmap[40];
     Bitmap nukeBit, nukeBitBg, long_shot;
 
     Dropship dropship;
-    int chanceForItem = 450;
+    int chanceForItem = 375;
     private void init(final Context ct) {
         back = BitmapFactory.decodeResource(ct.getResources(), R.drawable.back2);
         dino = BitmapFactory.decodeResource(ct.getResources(), R.drawable.top);
@@ -608,7 +606,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
 
             if (start) {
                 canvas.drawText("Press to start or continue", mMeasuredRect.centerX() - 200, mMeasuredRect.centerY(), paint3);
-
             }
 
             for (Shot s : shots) {
