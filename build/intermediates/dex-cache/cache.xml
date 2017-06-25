@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-10.2.6_3520651cfce66721413fe44128296c9f5cb2dede.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.3.1_bd3112ab4be6581c5629d4eb1779d60fcdb0bf5c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.3.1_256c94f6fdcce41a3b05062ecd4438bcf13f7b74.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.3.1_62bff12933f8f9df1d1756f7d8193d91f35f8278.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.1_17ed6d6f524d08205b932fd820a459f9d8217cdd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.3.1_c114cccadccec4fd84fdd19f61823b1a5798e497.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3f0a85e6000998ac322ddd50750e8cf91601a84b">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-10.2.6_506cf1ee0f9591ae9d95387dac71543046da6763.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4d7184a651c5975b49928ce7c76175d491ee7a5e">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-ads-10.2.6_0ffdd8d13060818cadfa69fae9e5baebd89959a0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.3.1_b35047ab739935284d0ec6b8a6660f1b41bfa85c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_ef45174dc81e4e456e485e8f1336b3a023feeba1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.1_cac689456672433a2680e40c1bf040bf50871ec1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="1172091167cff5873cbcccad4c0e08ec9e3240de">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-clearcut-10.2.6_c1d44be74c6d7f88d1312c0c0c4f9c4719d5fdc8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.3.1_c6a44334797b0c215e81289716c0314b408bba0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9024225796c3f11342ef6a4a99439f2f988bafb0">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-ads-lite-10.2.6_6c0df1d457809f02421b68c84352e8888280ca38.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="900a290779cdb4eb2e63b6f7806fd9f30ce4f60d">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.2.6_0f70dcb631fad7527ce67c74558013a6724756a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_4587515df70b11ae990e217c69c9b3a61733a049.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.2.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9b775d7b643397da3ab57e62ae8abb74a9cc9a83">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-gass-10.2.6_9fd1cf6ea62cae27af22d7709d98642e7eb94f78.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.3.1_6bdc8ff676782e8a530442a42c0aab2aa459bea8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.1_74e6b52c6beb01397a917213482d9433112476b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.3.1_2dfe5bb285409c7b23671e5d679f9eb2f23202ea.jar" />
+    </item>
+
+</items>

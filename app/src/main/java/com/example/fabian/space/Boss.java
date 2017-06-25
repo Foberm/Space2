@@ -101,26 +101,11 @@ import java.util.Random;
 
 
     Laser laser;
-    long _start_time=0;
     void draw(Canvas canvas){
-        if(lives >0) {
             canvas.drawRect(new Rect(200, 10, 350, 40), paint4);
             canvas.drawRect(new Rect(200, 10, 200 + lives, 40), paint3);
             canvas.drawBitmap(boss, null, bounding, null);
             if (laser != null) laser.draw(canvas);
-        }else{
-            long _current_time = android.os.SystemClock.uptimeMillis();
-            if (0 == _start_time) {
-                _start_time = _current_time;
-            }
-            if (null != gp.sb) {
-                Log.d("a", "da");
-                final int _relatif_time = (int) ((_current_time - _start_time));
-                if(_relatif_time > gp.sb.duration())gp.endBoss();
-                else gp.sb.setTime(_relatif_time);
-                gp.sb.draw(canvas, bounding.left, bounding.top );
-            }
-        }
     }
 
     void endLaser(){

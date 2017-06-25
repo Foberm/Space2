@@ -23,7 +23,6 @@ public class Item {
         this.gp = gp;
         bounding.offset(new Random().nextInt(875)+50, 0);
         r = new Random().nextInt(7);
-        r=3;
         switch(r){
             case 0:
                 item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.heart_small);
@@ -36,6 +35,7 @@ public class Item {
                 break;
             case 3:
                 item = BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.nuke);
+                break;
             default:
                 item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.c_coin);
         }

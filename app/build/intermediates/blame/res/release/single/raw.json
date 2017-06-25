@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\release\\raw\\laser.wav",
+        "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\src\\main\\res\\raw\\laser.wav"
+    },
+    {
+        "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\release\\raw\\laser2.wav",
+        "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\src\\main\\res\\raw\\laser2.wav"
+    },
+    {
+        "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\release\\raw\\txt.txt",
+        "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\src\\main\\res\\raw\\txt.txt"
+    },
+    {
+        "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\release\\raw\\click.mp3",
+        "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\src\\main\\res\\raw\\click.mp3"
+    }
+]

@@ -1,0 +1,164 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:2:1-32:12
+	package
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:3:5-39
+		INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:4:5-81
+	android:name
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:4:22-78
+application
+ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:5:5-30:19
+MERGED from [com.android.support:design:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:23:5-27:19
+MERGED from [com.google.android.gms:play-services-clearcut:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.2.6\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.6\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.6\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-gass:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.2.6\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.6\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:7:9-41
+	android:supportsRtl
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:11:9-35
+	android:hardwareAccelerated
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:9:9-43
+	android:icon
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:6:9-43
+	android:largeHeap
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:10:9-33
+	android:theme
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:8:9-40
+activity#com.example.fabian.space.MainActivity
+ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:12:9-16:20
+	android:screenOrientation
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:14:13-49
+	android:name
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:13:13-41
+activity#com.example.fabian.space.ShopActivity
+ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:17:9-20:68
+	android:label
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:19:13-56
+	android:theme
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:20:13-56
+	android:name
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:18:13-41
+activity#com.example.fabian.space.StartActivity
+ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:22:9-29:36
+	android:label
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:24:13-57
+	android:theme
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:25:13-56
+	android:name
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:23:13-42
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:25:69-29:25
+action#android.intent.action.MAIN
+ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:26:13-65
+	android:name
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:26:21-62
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:28:13-73
+	android:name
+		ADDED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml:28:23-70
+uses-sdk
+INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:design:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\10.2.6\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:22:5-43
+MERGED from [com.google.android.gms:play-services-clearcut:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.2.6\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.6\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.6\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-gass:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.2.6\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.6\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Fabian\AndroidStudioProjects\Space\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:design:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:design:25.3.1] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:26:9-47
+uses-permission#android.permission.INTERNET
+ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:19:5-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:19:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:20:5-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:20:22-76
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:25:9-232
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:25:72-181
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:25:182-230
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:25:19-71
+activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:26:9-131
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:26:92-129
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.6\AndroidManifest.xml:26:19-91
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.6\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.6\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.6\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.6\AndroidManifest.xml:19:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.6\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.6\AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:10.2.6] C:\Users\Fabian\AndroidStudioProjects\Space\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.6\AndroidManifest.xml:20:20-65

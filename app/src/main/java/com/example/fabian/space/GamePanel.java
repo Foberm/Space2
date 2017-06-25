@@ -402,6 +402,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                     s.bounding.bottom = -20;
                     s.bounding.top = -30;
                     boss.lives--;
+                    if(boss.lives<=0){
+                        endBoss();
+                    }
                 }
             }
             if(dropship!=null){
@@ -426,7 +429,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         }
     }
 
-    boolean nuke=false;
+    boolean nuke=true;//TODO
 
     void deleteStuff(){
         for(int i = 0; i < shots.size(); i++){
@@ -491,7 +494,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
             moveStuff();
             deleteStuff();
 
-            if(boss!=null && boss.lives>0)boss.update();
+            if(boss!=null)boss.update();
         }
     }
 
@@ -618,8 +621,14 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                 obstacles = new ArrayList<>();
                 enemies = new ArrayList<>();
                 enemyshot = new ArrayList<>();
+                frames_until_enemy_shot = new ArrayMap<>();
                 items = new ArrayList<>();
-                if(boss!=null)boss.lives-=100;
+                if(boss!=null){
+                    boss.lives-=100;
+                    if(boss.lives<=0){
+                        endBoss();
+                    }
+                }
                 nukeFired=-2;
             }
             nukeFired++;
@@ -670,6 +679,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         }
         return true;
     }
+
 
 
 }
