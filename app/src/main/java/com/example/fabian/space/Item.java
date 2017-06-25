@@ -39,6 +39,9 @@ public class Item {
             case 4:
                 item = BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.flash);
                 break;
+            case 5:
+                item = BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.reflect);
+                break;
             default:
                 item =  BitmapFactory.decodeResource(gp.context.getResources(), R.drawable.c_coin);
         }
@@ -70,6 +73,8 @@ public class Item {
                 break;
             case 4:
                 gp.flas_shot_left = gp.flash_shots;
+            case 5:
+                gp.reflect = true;
             default:
                 gp.gold++;
                 break;

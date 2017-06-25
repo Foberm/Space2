@@ -314,7 +314,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
             if(player.bounding2.left < 0)player.offset(-player.bounding2.left, 0);
         }
 
-
         for( Obstacle o : obstacles){
             o.move((int)(5*frameTime));
         }
@@ -384,11 +383,23 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
             }
         }
 
-        for( EnemyShot es : enemyshot){
+        for( int i = 0;i< enemyshot.size();i++){
+            EnemyShot es = enemyshot.get(i);
             es.move();
-            if(player.intersects(es.bounding)){
-                minusLive();
-                es.bounding.offset(0, 2000);
+            if(es.reflected){
+                if(checkForCollision(es.bounding, false) || es.bounding.bottom<0){
+                    i--;
+                    enemyshot.remove(es);
+                }
+            }
+            if(player.intersects(new Rect(es.bounding))){
+                if(reflect){
+                    es.reflected=true;
+                    reflect=false;
+                }else {
+                    es.bounding.offset(0, 2000);
+                    minusLive();
+                }
             }
         }
     }
@@ -451,7 +462,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     final int flash_shots = 10;
     int flas_shot_left = 0;
 
-    boolean nuke=true;//TODO
+    boolean nuke=false;
 
     void deleteStuff(){
         for(int i = 0; i < shots.size(); i++){
@@ -598,7 +609,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         scoreForBoss = score+150;
     }
 
-
+    boolean reflect = false;
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
@@ -608,7 +619,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
             canvas.drawBitmap(blood, null, mMeasuredRect, null);
         }
             canvas.drawBitmap(dino, null, new Rect(player.bounding2.left, player.bounding.top, player.bounding2.right, player.bounding2.bottom), null);
-
+            if(reflect)canvas.drawRect(new Rect(player.bounding.left, player.bounding.top-20, player.bounding.right, player.bounding.top), paint2);
             if (start) {
                 canvas.drawText("Press to start or continue", mMeasuredRect.centerX() - 200, mMeasuredRect.centerY(), paint3);
             }
@@ -656,7 +667,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                 enemies = new ArrayList<>();
                 enemyshot = new ArrayList<>();
                 frames_until_enemy_shot = new ArrayMap<>();
-                items = new ArrayList<>();
                 if(boss!=null){
                     boss.lives-=100;
                     if(boss.lives<=0){
@@ -709,7 +719,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                         dino = r;
                     }
                 }
-
             }
         }
         return true;

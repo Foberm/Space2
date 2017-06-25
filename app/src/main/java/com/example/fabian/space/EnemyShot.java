@@ -11,7 +11,7 @@ public class EnemyShot {
     Rect bounding;
     Point cur, to;
     double alpha;
-
+    boolean reflected=false;
     EnemyShot(Rect r){
         bounding  = new Rect(r.centerX()-15, r.bottom+10, r.centerX()+15, r.bottom+40);
         cur = new Point(bounding.centerX(), bounding.centerY());
@@ -19,6 +19,7 @@ public class EnemyShot {
         alpha = Math.tan(1.0*(to.x-cur.x)/(to.y-cur.y));
     }
     void move(){
-        bounding.offset((int)(15.0*Math.sin(alpha)), (int)(15.0*Math.cos(alpha)));
+        if(reflected)bounding.offset(-(int)(15.0*Math.sin(alpha)), -(int)(15.0*Math.cos(alpha)));
+        else bounding.offset((int)(15.0*Math.sin(alpha)), (int)(15.0*Math.cos(alpha)));
     }//TODO - * FRAMETIME
 }
