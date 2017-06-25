@@ -383,7 +383,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                 }
             }
         }
-    //
+
         for( EnemyShot es : enemyshot){
             es.move();
             if(player.intersects(es.bounding)){
