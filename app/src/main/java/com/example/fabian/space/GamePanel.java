@@ -360,7 +360,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
             }
 
         }
-        int size = obstacles.size();
+
         for(int i=0;i<shots.size();i++){
             Shot s = shots.get(i);
             if(s.draw ==6 || s.draw ==0) {
@@ -373,64 +373,14 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                 }
                 if (machine_gun_frames > 0) s.bounding.offset(0, -(int) (20 * frameTime));
                 shot.top = s.bounding.top;
-                for (int j = 0; j < size; j++) {
-                    Rect o = new Rect(obstacles.get(j).bounding.left, obstacles.get(j).bounding.top, obstacles.get(j).bounding.right, obstacles.get(j).bounding.bottom);
-                    if (shot.intersect(obstacles.get(j).bounding)) {
-                        if (!s.laser) {
-                            s.bounding.bottom = -20;
-                            s.bounding.top = -30;
-                        }
-                        if (new Random().nextInt(splitChance + 1) % splitChance == 0 && obstacles.get(j).alpha == 0) {
-                            if (new Random().nextBoolean())
-                                obstacles.add(new Obstacle(10, o, false));
-                            else obstacles.add(new Obstacle(10, o, true));
-                            if (new Random().nextBoolean())
-                                obstacles.add(new Obstacle(-10, o, false));
-                            else obstacles.add(new Obstacle(-10, o, true));
-                        }
-                        obstacles.get(j).bounding.bottom = 3500;
-                        obstacles.get(j).bounding.top = 3400;
-                    }
+
+                if(s.laser){
+                    s.draw--;
+                    checkForCollision(shot, true);
+                }else if(checkForCollision(shot, false)){
+                    s.bounding.bottom = -20;
+                    s.bounding.top = -30;
                 }
-                for (Enemy e : enemies) {
-                    if (shot.intersect(e.bounding)) {
-                        if (!s.laser) {
-                            s.bounding.bottom = -20;
-                            s.bounding.top = -30;
-                        }
-                        e.live--;
-                        if (e.live <= 0) {
-                            e.bounding.bottom = 3500;
-                            e.bounding.top = 3400;
-                        }
-                    }
-                }
-                if (boss != null) {
-                    if (shot.intersect(boss.bounding)) {
-                        if (!s.laser) {
-                            s.bounding.bottom = -20;
-                            s.bounding.top = -30;
-                        }
-                        boss.lives--;
-                        if (boss.lives <= 0) {
-                            endBoss();
-                        }
-                    }
-                }
-                if (dropship != null) {
-                    if (shot.intersect(dropship.bounding)) {
-                        if (!s.laser) {
-                            s.bounding.bottom = -20;
-                            s.bounding.top = -30;
-                        }
-                        dropship.lives--;
-                        if (dropship.lives <= 0) {
-                            dropship = null;
-                            addScore(20);
-                        }
-                    }
-                }
-                if(s.laser)s.draw--;
             }
         }
 
@@ -443,10 +393,65 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         }
     }
 
+    boolean checkForCollision(Rect shot, boolean survive){
+        int size = obstacles.size();
+        boolean ret = false;
+        for (int j = 0; j < size; j++) {
+            Rect o = new Rect(obstacles.get(j).bounding.left, obstacles.get(j).bounding.top, obstacles.get(j).bounding.right, obstacles.get(j).bounding.bottom);
+            if (shot.intersect(obstacles.get(j).bounding)) {
+                if (new Random().nextInt(splitChance + 1) % splitChance == 0 && obstacles.get(j).alpha == 0) {
+                    if (new Random().nextBoolean())
+                        obstacles.add(new Obstacle(10, o, false));
+                    else obstacles.add(new Obstacle(10, o, true));
+                    if (new Random().nextBoolean())
+                        obstacles.add(new Obstacle(-10, o, false));
+                    else obstacles.add(new Obstacle(-10, o, true));
+                }
+                obstacles.get(j).bounding.bottom = 3500;
+                obstacles.get(j).bounding.top = 3400;
+                if(survive)ret = true;
+                else return true;
+            }
+        }
+        for (Enemy e : enemies) {
+            if (shot.intersect(e.bounding)) {
+                e.live--;
+                if (e.live <= 0) {
+                    e.bounding.bottom = 3500;
+                    e.bounding.top = 3400;
+                }
+                if(survive)ret = true;
+                else return true;
+            }
+        }
+        if (boss != null) {
+            if (shot.intersect(boss.bounding)) {
+                boss.lives--;
+                if (boss.lives <= 0) {
+                    endBoss();
+                }
+                if(survive)ret = true;
+                else return true;
+            }
+        }
+        if (dropship != null) {
+            if (shot.intersect(dropship.bounding)) {
+                dropship.lives--;
+                if (dropship.lives <= 0) {
+                    dropship = null;
+                    addScore(20);
+                }
+                if(survive)ret = true;
+                else return true;
+            }
+        }
+        return ret;
+    }
+
     final int flash_shots = 10;
     int flas_shot_left = 0;
 
-    boolean nuke=false;
+    boolean nuke=true;//TODO
 
     void deleteStuff(){
         for(int i = 0; i < shots.size(); i++){
@@ -638,6 +643,14 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
             }
         if(nukeFired != -1){
             canvas.drawBitmap(nukeSequenze[nukeFired], null, mMeasuredRect, null);
+            checkForCollision(new Rect(nukeHitbox), true);
+            if(nukeFired<=11){
+                nukeHitbox.left-=50;
+                nukeHitbox.right+=50;
+                nukeHitbox.top-=90;
+            }else if(nukeFired<=31){
+                nukeHitbox.offset(0, -40);
+            }
             if(nukeFired==39){
                 obstacles = new ArrayList<>();
                 enemies = new ArrayList<>();
@@ -662,7 +675,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                 canvas.drawText("Highscore: " + score + ", Score: " + score + ", Lives: " + lives + ", Gold: " + gold, 20, 20, paint3);
 
     }
-
+    Rect nukeHitbox;
     Rect nuke2 = new Rect(890,490,1010,610);
     int nukeFired = -1;
     @Override
@@ -678,6 +691,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                 if(nuke){
                     nukeFired = 1;
                     nuke = false;
+                    nukeHitbox = new Rect(500, 1920-80, 580, 1920);
                 }
             } else {
                 if (event.getAction() == android.view.MotionEvent.ACTION_UP && event.getPointerCount() <= 1) {
