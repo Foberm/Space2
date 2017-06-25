@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_focused.xml",
-        "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.2.6\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
-    },
-    {
         "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
         "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_focused.xml",
+        "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.2.6\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
     {
         "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
@@ -100,12 +100,12 @@
         "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.2.6\\res\\drawable\\common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
-        "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.2.6\\res\\drawable\\common_google_signin_btn_text_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
         "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.2.6\\res\\drawable\\common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "C:\\Users\\Fabian\\AndroidStudioProjects\\Space\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",

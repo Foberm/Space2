@@ -209,15 +209,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
 
         doFileStuff();
     }
-    public  int getResId(String pVariableName, String pResourcename, String pPackageName)
-    {
-        try {
-            return getResources().getIdentifier(pVariableName, pResourcename, pPackageName);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return -1;
-        }
-    }
+
     int highscore =0;
     void doFileStuff(){
         String ret = "";
@@ -375,11 +367,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
             Shot s = shots.get(i);
             if(s.draw ==6) {
                 Rect shot;
-                if (s.laser = false) {
+                if (!s.laser) {
                     shot = new Rect(s.bounding.left, 0, s.bounding.right, s.bounding.bottom);
                     s.move(-(int) (20 * frameTime));
                 } else {
-                    shot = s.bounding;
+                    shot = new Rect(s.bounding);
                 }
                 if (machine_gun_frames > 0) s.bounding.offset(0, -(int) (20 * frameTime));
                 shot.top = s.bounding.top;
@@ -453,8 +445,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         }
     }
 
-    final int flash_shots = 5;
-    int flas_shot_left = flash_shots;
+    final int flash_shots = 10;
+    int flas_shot_left = 0;
 
     boolean nuke=false;
 
@@ -625,7 +617,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                     s.draw--;
                     if(s.draw<-1)shots.remove(s);
                 }
-                canvas.drawBitmap(shot, null, s.bounding, null);
+                else canvas.drawBitmap(shot, null, s.bounding, null);
             }
             for (Item i : items) {
                 i.draw(canvas);
