@@ -365,7 +365,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
         int size = obstacles.size();
         for(int i=0;i<shots.size();i++){
             Shot s = shots.get(i);
-            if(s.draw ==6) {
+            if(s.draw ==6 || s.draw ==0) {
                 Rect shot;
                 if (!s.laser) {
                     shot = new Rect(s.bounding.left, 0, s.bounding.right, s.bounding.bottom);
@@ -615,7 +615,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
                 if(s.laser){
                     canvas.drawBitmap(long_shot, null, s.bounding, null);
                     s.draw--;
-                    if(s.draw<-1)shots.remove(s);
+                    if(s.draw<-2)shots.remove(s);
                 }
                 else canvas.drawBitmap(shot, null, s.bounding, null);
             }
