@@ -128,7 +128,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback{
     Dropship dropship;
     int chanceForItem = 375;
     private void init(final Context ct) {
-        back = BitmapFactory.decodeResource(ct.getResources(), R.drawable.back2);
+        back = BitmapFactory.decodeResource(ct.getResources(), R.drawable.bg);
         dino = BitmapFactory.decodeResource(ct.getResources(), R.drawable.top);
         top = BitmapFactory.decodeResource(ct.getResources(), R.drawable.top);
         l = BitmapFactory.decodeResource(ct.getResources(), R.drawable.left);
