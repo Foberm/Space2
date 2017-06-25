@@ -45,7 +45,7 @@ public class MainThread extends Thread{
                     this.gamePanel.draw(canvas);
                 }
             } catch (Exception e){
-                e.printStackTrace();                Log.d("a", "here");
+                e.printStackTrace();
 
             }
             finally {
@@ -53,7 +53,7 @@ public class MainThread extends Thread{
                     try{
                         surfaceHolder.unlockCanvasAndPost(canvas);
                     }catch (Exception e){
-                        e.printStackTrace();                Log.d("a", "here");
+                        e.printStackTrace();
 
                     }
                 }
